@@ -20,6 +20,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false,
-    minify: 'terser',
+    minify: 'esbuild', // terser yerine esbuild (daha hafif)
+    chunkSizeWarningLimit: 1000,
   }
 })
