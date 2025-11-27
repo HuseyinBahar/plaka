@@ -12,11 +12,15 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
+// CSP için domain'i environment variable'dan al
+const corsOrigin = process.env.CORS_ORIGIN || 'http://localhost:5173';
+const isProduction = process.env.NODE_ENV === 'production';
+
 app.use(helmet({
   contentSecurityPolicy: {
     directives: {
       defaultSrc: ["'self'"],
-      imgSrc: ["'self'", "data:", "http://localhost:5000", "http://localhost:5173"],
+      imgSrc: ["'self'", "data:", corsOrigin, ...(isProduction ? [] : ["http://localhost:5000", "http://localhost:5173"])],
       scriptSrc: ["'self'"],
       styleSrc: ["'self'", "'unsafe-inline'"],
     },

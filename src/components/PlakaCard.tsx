@@ -1,4 +1,4 @@
-import { MapPin, Calendar, Hash } from 'lucide-react';
+import { MapPin, Calendar } from 'lucide-react';
 import type { PlakaPost } from '../types';
 import { formatDate, truncateText } from '../utils/helpers';
 import { apiService } from '../services/api';

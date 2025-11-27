@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Upload, MapPin, Hash, FileText, ArrowLeft } from 'lucide-react';
-import type { PlakaFormData, PlakaPost } from '../types';
+import type { PlakaFormData } from '../types';
 import { apiService } from '../services/api';
 import { 
   validateImageFile, 

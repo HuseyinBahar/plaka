@@ -28,7 +28,7 @@ export const getPlakaPosts = (): PlakaPost[] => {
   }
 };
 
-export const deletePlakaPost = (id: string): void => {
+export const deletePlakaPost = (id: number): void => {
   try {
     const posts = getPlakaPosts();
     const filteredPosts = posts.filter(post => post.id !== id);
